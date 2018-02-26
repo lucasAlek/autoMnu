@@ -1,3 +1,3 @@
 class Year < ApplicationRecord
-    validates year, presence: true
+    validates :year, presence: true
 end

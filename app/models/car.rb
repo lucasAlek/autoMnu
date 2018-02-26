@@ -1,3 +1,3 @@
 class Car < ApplicationRecord
-    vailidates make,model presence: true
+    validates :make, :model, presence: true
 end
