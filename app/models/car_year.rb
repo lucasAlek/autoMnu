@@ -1,0 +1,2 @@
+class CarYear < ApplicationRecord
+end
