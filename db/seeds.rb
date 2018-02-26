@@ -7,17 +7,26 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'json'
 
-car_file =  JSON.parse(open("#{Rails.root}/db/assets/json_data.json").read)
+json_file =  JSON.parse(open("#{Rails.root}/db/assets/json_data.json").read)
 
-car_file.each do |car|
-    car.create(make: car['make'],
-               model: car['model'])
+json_file.each do |file|
+    car = Car.new
 
-               
-    car_year = car['year']
-    year_exist = Year.where("year == car_year")
-    if(!car_year){
-        year.create(year: car['year'])
-    }
-    
+    car.make = file['make']
+    car.model = file['model']
+    puts car.inspect 
+    car.save
+
+    puts car.inspect 
+
+
+    # Car.create(make: car['make'],
+    #            model: car['model'])
+
+
+    # car_year = car['year']
+    # year_exist = Year.where("year == car_year")
+    # if(!car_year)
+    #     Year.create(year: car['year'])
+    # end    
 end 
