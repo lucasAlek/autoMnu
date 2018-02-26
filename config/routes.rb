@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :years
   resources :owners
   resources :car_years
   resources :cars
