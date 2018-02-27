@@ -6,9 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'json'
-require 'Faker'
+require 'faker'
 
 json_file =  JSON.parse(open("#{Rails.root}/db/assets/json_data.json").read)
+
+5.times do
+  owner = Owner.new
+  owner.name = Faker::StarTrek.character
+  owner.save
+end
 
 json_file.each do |file|
     # car = Car.new
@@ -35,8 +41,3 @@ json_file.each do |file|
     # end    
 end
 
-5.times do
-  owner = Owner.new
-  owner.name = Faker::Starwars.character
-  owner.save
-end
