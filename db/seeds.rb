@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'json'
+require 'Faker'
 
 json_file =  JSON.parse(open("#{Rails.root}/db/assets/json_data.json").read)
 
@@ -17,14 +18,11 @@ json_file.each do |file|
     # car.save
 
 
-    year = Year.new
-    if(!Year.find_by year: file['year'])    
-        year.year = file['year']
-        year.save
-    end
-    
-
-
+    # year = Year.new
+    # if(!Year.find_by year: file['year'])
+    #     year.year = file['year']
+    #     year.save
+    # end
 
     # Car.create(make: car['make'],
     #            model: car['model'])
@@ -35,4 +33,10 @@ json_file.each do |file|
     # if(!car_year)
     #     Year.create(year: car['year'])
     # end    
-end 
+end
+
+5.times do
+  owner = Owner.new
+  owner.name = Faker::Starwars.character
+  owner.save
+end
