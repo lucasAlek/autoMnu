@@ -10,14 +10,20 @@ require 'json'
 json_file =  JSON.parse(open("#{Rails.root}/db/assets/json_data.json").read)
 
 json_file.each do |file|
-    car = Car.new
+    # car = Car.new
 
-    car.make = file['make']
-    car.model = file['model']
-    puts car.inspect 
-    car.save
+    # car.make = file['make']
+    # car.model = file['model']
+    # car.save
 
-    puts car.inspect 
+
+    year = Year.new
+    if(!Year.find_by year: file['year'])    
+        year.year = file['year']
+        year.save
+    end
+    
+
 
 
     # Car.create(make: car['make'],
