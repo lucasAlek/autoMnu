@@ -6,6 +6,9 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Carid</th>
+      <th>car Make</th>
+      <th>car Model</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,6 +17,9 @@
     <% @owners.each do |owner| %>
       <tr>
         <td><%= owner.name %></td>
+        <td><%= owner.car_id_id%></td>
+        <td><%= Car.find(owner.car_id_id).make%></td>
+        <td><%= Car.find(owner.car_id_id).model%></td>
         <td><%= link_to 'Show', owner %></td>
         <td><%= link_to 'Edit', edit_owner_path(owner) %></td>
         <td><%= link_to 'Destroy', owner, method: :delete, data: { confirm: 'Are you sure?' } %></td>

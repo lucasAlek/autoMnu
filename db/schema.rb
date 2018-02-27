@@ -10,11 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180226173941) do
+ActiveRecord::Schema.define(version: 20180227204301) do
 
   create_table "car_years", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "year_id_id"
+    t.integer "car_id_id"
+    t.index ["car_id_id"], name: "index_car_years_on_car_id_id"
+    t.index ["year_id_id"], name: "index_car_years_on_year_id_id"
   end
 
   create_table "cars", force: :cascade do |t|
@@ -28,6 +32,8 @@ ActiveRecord::Schema.define(version: 20180226173941) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "car_id_id"
+    t.index ["car_id_id"], name: "index_owners_on_car_id_id"
   end
 
   create_table "years", force: :cascade do |t|

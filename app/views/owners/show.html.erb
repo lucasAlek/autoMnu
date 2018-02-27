@@ -3,6 +3,8 @@
 <p>
   <strong>Name:</strong>
   <%= @owner.name %>
+<%= Car.find(@owner.car_id_id).make%>
+<%= Car.find(@owner.car_id_id).model%>
 </p>
 
 <%= link_to 'Edit', edit_owner_path(@owner) %> |
