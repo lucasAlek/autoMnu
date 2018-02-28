@@ -4,7 +4,7 @@ class OwnersController < ApplicationController
   # GET /owners
   # GET /owners.json
   def index
-    @owners = Owner.all.paginate(page:params[:page], per_page:50)
+    @owners = Owner.all.paginate(page:params[:page], per_page:25)
   end
 
   # GET /owners/1
