@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<% will_paginate @owners %>
 <h1>Owners</h1>
 
 <table>
@@ -29,5 +29,5 @@
 </table>
 
 <br>
-
+<% will_paginate @owners %>
 <%= link_to 'New Owner', new_owner_path %>
