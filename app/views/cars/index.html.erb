@@ -7,6 +7,7 @@
     <tr>
       <th>Model</th>
       <th>Make</th>
+      <th>year</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,6 +17,7 @@
       <tr>
         <td><%= car.model %></td>
         <td><%= car.make %></td>
+        <td><%= Year.find(car.year_id_id).year %></td>
         <td><%= link_to 'Show', car %></td>
         <td><%= link_to 'Edit', edit_car_path(car) %></td>
         <td><%= link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?' } %></td>
