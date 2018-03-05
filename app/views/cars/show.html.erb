@@ -9,6 +9,10 @@
   <strong>Make:</strong>
   <%= @car.make %>
 </p>
+<p>
+  <strong>Year:</strong>
+  <%= Year.find(@car.year_id_id).year %>
+</p>
 
 <%= link_to 'Edit', edit_car_path(@car) %> |
 <%= link_to 'Back', cars_path %>

@@ -33,15 +33,7 @@ end
 #     car.model = file['model']
 #     car.year_id_id = Year.find_by_year(file['year']).id
 #     car.save
-#
-#
-#
-#
-#     # car_year = car['year']
-#     # year_exist = Year.where("year == car_year")
-#     # if(!car_year)
-#     #     Year.create(year: car['year'])
-#     # end
+
 # end
 
 
