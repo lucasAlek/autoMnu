@@ -6,11 +6,26 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <ul>
-      <li><%= link_to 'Home', Owner %></li>
-      <li><%= link_to 'Car',Car %></li>
-      <li><%= link_to 'Owner', Owner %></li>
-    </ul>
+
+    <div class="ui menu">
+      <div class="header item">
+        Rails Project
+        <i class="fire extinguisher icon"></i>
+      </div>
+      <%= link_to semantic_icon('home') + 'Home', static_pages_home_path , class: 'item'%>
+      <%= link_to 'Owners', owners_path, class: 'item'%>
+      <%= link_to 'Cars', cars_path, class: 'item'%>
+      <%= link_to 'About', static_pages_about_path, class: 'item'%>
+
+      <div class="right menu">
+        <div class="item">
+          <div class="ui transparent icon input">
+            <input type="text" placeholder="Search...">
+            <i class="search link icon"></i>
+          </div>
+        </div>
+      </div>
+    </div>
   </head>
 
   <body>

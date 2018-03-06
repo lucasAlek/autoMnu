@@ -5,8 +5,10 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'sunspot_rails'
+
 gem 'will_paginate', '~> 3.1.0'
-gem 'semantic-ui-sass', '~> 2.2', '>= 2.2.14'
+gem 'semantic-ui-sass', '~> 2.3'
 
 gem 'faker', '~> 1.6', '>= 1.6.6'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
