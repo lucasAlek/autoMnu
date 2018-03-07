@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'sunspot_rails'
+gem 'sunspot_solr'
 
 gem 'will_paginate', '~> 3.1.0'
 gem 'semantic-ui-sass', '~> 2.3'
