@@ -1,8 +1,16 @@
 <p id="notice"><%= notice %></p>
+<div class="container">
 <%= will_paginate @cars %>
 <h1>Cars</h1>
 
-<table>
+
+  <%= form_tag(search_path, method: "get") do %>
+    <%= label_tag(:q, "Search for:") %>
+    <%= text_field_tag(:q) %>
+    <%= submit_tag("Search") %>
+  <% end %>
+
+<table class="ui celled padded table">
   <thead>
     <tr>
       <th>Model</th>
@@ -18,8 +26,8 @@
         <td><%= car.model %></td>
         <td><%= car.make %></td>
         <td><%= Year.find(car.year_id_id).year %></td>
-        <td><%= link_to 'Show', car %></td>
-        <td><%= link_to 'Edit', edit_car_path(car) %></td>
+        <td><%= link_to 'Show', car, class: 'ui positive basic button' %></td>
+        <td><%= link_to 'Edit', edit_car_path(car), class: 'ui primery basic button' %></td>
         <td><%= link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -29,3 +37,4 @@
 <br>
 <%= will_paginate @cars %>
 <%= link_to 'New Car', new_car_path %>
+</div>

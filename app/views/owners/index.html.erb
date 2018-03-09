@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
-<%= will_paginate @owners %>
-<h1>Owners</h1>
-
-<table>
+<div class="ui container">
+  <h1>Owners</h1>
+  <%= will_paginate @owners %>
+<table class="ui celled padded table">
   <thead>
     <tr>
       <th>Name</th>
@@ -20,14 +20,15 @@
         <td><%= Year.find(Car.find(owner.car_id_id).year_id_id).year %></td>
         <td><%= Car.find(owner.car_id_id).make%></td>
         <td><%= Car.find(owner.car_id_id).model%></td>
-        <td><%= link_to 'Show', owner %></td>
-        <td><%= link_to 'Edit', edit_owner_path(owner) %></td>
-        <td><%= link_to 'Destroy', owner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', owner, class: 'ui positive basic button' %></td>
+        <td><%= link_to 'Edit', edit_owner_path(owner), class: 'ui primery basic button' %></td>
+        <td><%= link_to 'Destroy', owner, method: :delete, data: { confirm: 'Are you sure?' }, class: 'ui negative basic button' %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+  <%= will_paginate @owners %>
+  <%= link_to 'New Owner', new_owner_path %>
+</div>
 <br>
-<%= will_paginate @owners %>
-<%= link_to 'New Owner', new_owner_path %>
+

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get 'static_pages/about'
 
   get 'static_pages/home'
@@ -9,5 +10,7 @@ Rails.application.routes.draw do
   resources :owners
   resources :car_years
   resources :cars
+
+  get 'Search', to: 'search#index' , as: 'search'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
